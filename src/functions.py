@@ -66,8 +66,8 @@ def generate_url(vault: str, file: str, mode: Literal["open", "new"] = "open") -
         vault = vault[:-1]
 
     vault_name = get_name_from_path(vault, exclude_ext=False)
-    if not file.endswith(".md"):
-        file = file + ".md"
+    # if not file.endswith(".md"):
+    #     file = file + ".md"
 
     try:
         relative_file = Path(file).relative_to(vault)
