@@ -219,7 +219,7 @@ def find_note_in_vault(vault: str, search: str) -> List[Note]:
     >>> find_note_in_vault("test-vault", "Test")
     [Note<test-vault/Test.md>, Note<test-vault/Test2.md>, Note<test-vault/subdir/Test.md>, Note<test-vault/subdir/Hallo.md>]
     """
-    search_pattern = os.path.join(vault, "**", "*.md")
+    search_pattern = os.path.join(vault, "**", "*.*")
     logger.info(search_pattern)
     files = glob.glob(search_pattern, recursive=True)
     suggestions = fuzzyfinder(search, files)
